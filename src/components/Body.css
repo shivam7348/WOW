@@ -1,0 +1,199 @@
+/* Body container */
+.body {
+  padding: 20px;
+  font-family: 'Poppins', Arial, sans-serif; /* Swiggy uses Poppins font */
+  background-color: #f8f8f8; /* Light background for the body */
+}
+
+/* Filter button container */
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Adds space between the buttons */
+  margin-bottom: 30px; /* Adds some space below the filter buttons */
+  flex-wrap: wrap; /* Ensures buttons wrap on smaller screens */
+}
+
+/* Filter buttons */
+.filter-btn {
+  padding: 12px 24px; /* Adds padding inside the buttons */
+  font-size: 14px; /* Sets the font size */
+  font-weight: 600; /* Makes the text bold */
+  color: #fff; /* White text color */
+  background-color: #fc8019; /* Swiggy's orange color */
+  border: none; /* Removes the default border */
+  border-radius: 8px; /* Rounds the corners of the buttons */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Hover effect for buttons */
+.filter-btn:hover {
+  background-color: #e76a00; /* Darker orange on hover */
+  transform: translateY(-2px); /* Slightly lifts the button on hover */
+}
+
+/* Active state for buttons */
+.filter-btn:active {
+  background-color: #d45a00; /* Even darker orange when the button is clicked */
+  transform: translateY(0); /* Resets the lift effect when the button is clicked */
+}
+
+/* Focus state for buttons */
+.filter-btn:focus {
+  outline: none; /* Removes the default focus outline */
+  box-shadow: 0 0 0 3px rgba(252, 128, 25, 0.3); /* Adds a custom focus outline */
+}
+
+/* Restaurant grid layout */
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid layout */
+  gap: 25px; /* Adds space between the cards */
+  padding: 20px; /* Adds padding around the grid */
+}
+
+/* Restaurant card styling (example) */
+.restaurant-card {
+  background-color: #fff; /* White background for cards */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Ensures content stays within the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px); /* Lifts the card on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Restaurant card image */
+.restaurant-card img {
+  width: 100%;
+  height: 180px; /* Fixed height for images */
+  object-fit: cover; /* Ensures the image covers the area */
+}
+
+/* Restaurant card content */
+.restaurant-card-content {
+  padding: 16px;
+}
+
+.restaurant-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333; /* Dark text color */
+}
+
+.restaurant-card p {
+  font-size: 14px;
+  color: #666; /* Light text color */
+  margin-bottom: 12px;
+}
+
+.restaurant-card .rating {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #fc8019; /* Swiggy's orange color for rating */
+}
+
+.restaurant-card .rating svg {
+  margin-right: 4px; /* Adds space between the icon and text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filter {
+    gap: 10px; /* Reduces gap between buttons on smaller screens */
+  }
+
+  .filter-btn {
+    padding: 10px 20px; /* Smaller padding for buttons */
+    font-size: 13px; /* Smaller font size */
+  }
+
+  .restaurant-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusts grid for smaller screens */
+    gap: 15px; /* Reduces gap between cards */
+  }
+
+  .restaurant-card img {
+    height: 150px; /* Adjusts image height for smaller screens */
+  }
+}
+
+/* Container for the list of restaurants */
+.restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual Restaurant Card */
+.restaurant-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Restaurant Image */
+.restaurant-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Restaurant Details */
+.restaurant-details {
+  padding: 15px;
+}
+
+.restaurant-details h3 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.restaurant-details p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Rating and Cuisine */
+.restaurant-details .rating {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #ffa500;
+  margin: 5px 0;
+}
+
+.restaurant-details .rating svg {
+  margin-right: 5px;
+}
+
+.restaurant-details .cuisine {
+  font-size: 14px;
+  color: #888;
+  margin: 5px 0;
+}
+
+/* Delivery Time */
+.restaurant-details .delivery-time {
+  font-size: 14px;
+  color: #333;
+  margin: 5px 0;
+}

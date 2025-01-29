@@ -1,0 +1,71 @@
+/* RestaurantCard.css */
+.restaurant-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: auto;
+  width: 200px;
+  height: 380px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  background-color: #fff; /* White background */
+  overflow: hidden; /* Ensures content stays within the card */
+}
+
+/* Hover effect for the card */
+.restaurant-card:hover {
+  transform: translateY(-5px); /* Slightly lift the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.restaurant-card__image {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease; /* Smooth image scaling on hover */
+}
+
+/* Hover effect for the image */
+.restaurant-card:hover .restaurant-card__image {
+  transform: scale(1.05); /* Slightly zoom in on hover */
+}
+
+.restaurant-card__content {
+  margin-top: 12px;
+}
+
+.restaurant-card__title {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #333; /* Darker text for better readability */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Hover effect for the title */
+.restaurant-card:hover .restaurant-card__title {
+  color: #e67e22; /* Change title color on hover */
+}
+
+.restaurant-card__cuisine {
+  color: #666;
+  margin: 8px 0;
+  font-size: 0.9rem; /* Smaller font size for cuisine */
+}
+
+.restaurant-card__rating {
+  color: #ffa500;
+  margin: 8px 0;
+  font-weight: bold; /* Bold rating text */
+}
+
+.restaurant-card__cost,
+.restaurant-card__distance,
+.restaurant-card__time {
+  margin: 4px 0;
+  color: #333;
+  font-size: 0.9rem; /* Smaller font size for details */
+}
+
+/* Optional: Add a subtle gradient background on hover */
+.restaurant-card:hover {
+  background: linear-gradient(135deg, #f9f9f9, #fff); /* Light gradient effect */
+}
