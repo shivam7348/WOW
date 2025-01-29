@@ -1,12 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Body.css';
 import RestaurantCard from './ResturantCard';
 import resData from '../utils/mockData';
 
 function Body() {
-  const [restaurantList, setRestaurantList] = useState(resData);
+  const [restaurantList, setRestaurantList] = useState(resData.restaurants); 
+  console.log(restaurantList)
+  return (
+    <div className="body">
+      <div className="filter">
+        <button
+          className="filter-btn"
+          onClick={() => {
+            const filtered = restaurantList.filter(
+              (res) => res.info.avgRating > 4
+            );
+            setRestaurantList(filtered); 
+          }}
+        >
+          Top Rated Restaurants
+        </button>
+      </div>
 
- 
+      <div className="restaurant-list">
+        {restaurantList.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Body;
+
+
   // useEffect(() => {
   //   fetchData();
   // }, []);
@@ -24,25 +51,3 @@ function Body() {
   //     console.error("Error fetching data:", error);
   //   }
   // };
-  return (
-    <div className="body">
-      <div className="filter">
-        <button className="filter-btn" onClick={() => { }}>
-          Top Rated Restaurants
-        </button>
-        <button className="filter-btn" onClick={() => { console.log("first") }}>
-          All
-        </button>
-      </div>
-
-
-      <div className="restaurant-list">
-        {restaurantList.restaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-export default Body;
