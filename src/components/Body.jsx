@@ -4,8 +4,8 @@ import RestaurantCard from './ResturantCard';
 
 function Body() {
   const [restaurantList, setRestaurantList] = useState([]);
-  const [originalList, setOriginalList] = useState([]); // Store original list for reset
-  const [loading, setLoading] = useState(true); // Track loading state
+  const [originalList, setOriginalList] = useState([]); 
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     fetchData();
@@ -20,6 +20,7 @@ function Body() {
 
       const allRestaurants = json?.data?.cards
         ?.map((card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        // optional chaining ???
         ?.filter((res) => res !== undefined)
         ?.flat();
         console.log(allRestaurants)
@@ -38,7 +39,7 @@ function Body() {
   if (loading) {
     return <h1>Loading...</h1>;
   }
-
+  
   return (
     <div className="body">
       <div className="filter">
@@ -53,7 +54,7 @@ function Body() {
         </button>
         <button
           className="filter-btn"
-          onClick={() => setRestaurantList(originalList)} // Reset list
+          onClick={() => setRestaurantList(originalList)} 
         >
           Show All
         </button>
